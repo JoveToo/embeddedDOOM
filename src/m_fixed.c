@@ -78,7 +78,8 @@ FixedDiv2
 #endif
 
     double c;
-
+    if (b == 0) return 0x7fffffff;
+    
     c = ((double)a) / ((double)b) * FRACUNIT;
 
     if (c >= 2147483648.0 || c < -2147483648.0)

@@ -72,6 +72,7 @@ ticcmd_t*	I_BaseTiccmd(void)
     return &emptycmd;
 }
 
+#pragma data_alignment=4
 unsigned char DOOMHeap[FIXED_HEAP];
 
 int  I_GetHeapSize (void)

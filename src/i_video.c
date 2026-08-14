@@ -187,7 +187,7 @@ void I_SetPalette (byte* palette)
 	
 }
 
-#define OUTSCALE 1
+#define OUTSCALE 5
 
 //
 // I_UpdateNoBlit
