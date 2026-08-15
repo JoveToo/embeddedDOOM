@@ -11,7 +11,7 @@
 
 // ---------------------------------------------------------------------
 // HUD/UI patch rescaling.
-#define HUD_RESCALE 0.5
+#define HUD_RESCALE UI_SCALE
 
 // ---------------------------------------------------------------------
 // Separate rescale factors for different asset types

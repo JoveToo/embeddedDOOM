@@ -690,6 +690,11 @@ void R_ExecuteSetViewSize (void)
 	scaledviewwidth = SCREENWIDTH;
 	viewheight = SCREENHEIGHT;
     }
+    if (setblocks == 10)
+    {
+	scaledviewwidth = SCREENWIDTH;
+	viewheight = SCREENHEIGHT - (32 * UI_SCALE_Y);
+    }
     else
     {
         scaledviewwidth = setblocks*SCREENWIDTH/10;

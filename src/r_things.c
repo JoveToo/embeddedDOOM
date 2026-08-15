@@ -44,7 +44,7 @@
 #include "scale.h"
 
 #define MINZ								(FRACUNIT*4)
-#define BASEYCENTER						100 / (320/BASE_WIDTH)
+#define BASEYCENTER						((int)(100 * UI_SCALE_Y))
 
 //void R_DrawColumn (void);
 //void R_DrawFuzzColumn (void);
@@ -709,7 +709,7 @@ void R_DrawPSprite (pspdef_t* psp)
 	// store information in a vissprite
 	vis = &avis;
 	vis->mobjflags = 0;
-	vis->texturemid = (BASEYCENTER<<FRACBITS)+FRACUNIT/2-(psp->sy-spritetopoffset[lump] * SPRITE_SCALE);
+	vis->texturemid = (BASEYCENTER<<FRACBITS)+FRACUNIT/2-(psp->sy-(spritetopoffset[lump] * SPRITE_SCALE));
 	vis->x1 = x1 < 0 ? 0 : x1;
 	vis->x2 = x2 >= viewwidth ? viewwidth-1 : x2;		
 	vis->scale = pspritescale<<detailshift;

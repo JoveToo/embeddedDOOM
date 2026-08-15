@@ -557,11 +557,7 @@ void R_DrawSpan (void)
     do 
     {
 	// Current texture index in u,v.
-	// Flats are stored shrunk 8x (FLAT_RESCALE=0.125 in shrinkwad.c).
-	// The extra >>3 (divide world coord by 8) before the normal wrap
-	// keeps the visible tile period at the original 64 world units
-	// even though we're now sampling an 8x8 source instead of 64x64.
-	spot = ((yfrac>>16)&(7*8)) + ((xfrac>>19)&7);
+	spot = ((yfrac>>(16))&(FLAT_SIZE_MASK*FLAT_SIZE)) + ((xfrac>>19)&FLAT_SIZE_MASK);
 
 	// Lookup pixel from flat texture tile,
 	//  re-index using light/colormap.
@@ -685,7 +681,7 @@ void R_DrawSpanLow (void)
     count = ds_x2 - ds_x1; 
     do 
     { 
-    spot = ((yfrac>>16)&(7*8)) + ((xfrac>>19)&7);
+    spot = ((yfrac>>(16))&(FLAT_SIZE_MASK*FLAT_SIZE)) + ((xfrac>>19)&FLAT_SIZE_MASK);
 
 	// Lowres/blocky mode does it twice,
 	//  while scale is adjusted appropriately.
