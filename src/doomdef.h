@@ -27,17 +27,12 @@
 #include <string.h>
 #include "stubs.h"
 
-#include "scale.h"
-
 //
 // Global parameters/defines.
 //
 // DOOM version
 enum { VERSION =  110 };
 
-// UI scaling factors relative to original 320x200
-#define UI_SCALE_X ((float)SCREENWIDTH / 320.0f)
-#define UI_SCALE_Y ((float)SCREENHEIGHT / (200.0f))
 
 // Game mode handling - identify IWAD version
 //  to handle IWAD dependend animations etc.
@@ -101,7 +96,7 @@ typedef enum
 // For resize of screen, at start of game.
 // It will not work dynamically, see visplanes.
 //
-#define	BASE_WIDTH		160
+#define	BASE_WIDTH		320
 
 // It is educational but futile to change this
 //  scaling e.g. to 2. Drawing of status bar,
@@ -114,21 +109,14 @@ typedef enum
 // C++ might sucks for OOP, but it sure is a better C.
 // So there.
 
-// 320
-#define SCREENWIDTH  (SCREEN_MUL*BASE_WIDTH)
-// 200
-#define SCREENHEIGHT (int)(SCREEN_MUL*BASE_WIDTH*INV_ASPECT_RATIO)
-
+#define SCREENWIDTH  (SCREEN_MUL*BASE_WIDTH)  //320
+#define SCREENHEIGHT (int)(SCREEN_MUL*BASE_WIDTH*INV_ASPECT_RATIO) //200
 
 
 // The maximum number of players, multiplayer/networking.
 #ifndef MAXPLAYERS
-#define MAXPLAYERS		1
+#define MAXPLAYERS		4
 #endif
-
-#define FLAT_SIZE 16          // new flat dimensions
-#define FLAT_MASK (FLAT_SIZE - 1)   // 31
-#define FLAT_SHIFT 4          // because 2^5 = 32
 
 // State updates, number of tics / second.
 #define TICRATE		35
