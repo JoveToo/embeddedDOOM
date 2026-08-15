@@ -7,6 +7,7 @@
 #include "rawwad.c"
 
 #include "../info.h"
+#include "../scale.h"
 
 // ---------------------------------------------------------------------
 // HUD/UI patch rescaling.
@@ -14,9 +15,10 @@
 
 // ---------------------------------------------------------------------
 // Separate rescale factors for different asset types
-#define PATCH_RESCALE  0.125    // Wall patches (textures) – scale down 25%
-#define SPRITE_RESCALE 0.25    // Sprites – scale down 25% (rendered up in engine)
-#define FLAT_RESCALE   0.125    // Flats – scale down 25%
+#define PATCH_RESCALE  (1.0f / TEXTURE_SCALE)
+#define SPRITE_RESCALE (1.0f / SPRITE_SCALE)
+#define FLAT_RESCALE   (1.0f / FLAT_SCALE)    
+
 // ---------------------------------------------------------------------
 
 typedef struct {

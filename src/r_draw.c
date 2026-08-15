@@ -517,12 +517,7 @@ fixed_t			ds_ystep;
 // start of a 64*64 tile image 
 byte*			ds_source;	
 
-// Flats are stored shrunk by FLAT_RESCALE (see shrinkwad.c) to fit flash.
-// FLAT_SCALE must match 1/FLAT_RESCALE exactly, and FLAT_SIZE is the
-// actual stored width/height (64 / FLAT_SCALE). Both must be powers of two.
-#define FLAT_SCALE      8
-#define FLAT_SIZE       8
-#define FLAT_SIZE_MASK  (FLAT_SIZE-1)
+#include "scale.h"
 
 // just for profiling
 int			dscount;

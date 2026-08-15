@@ -252,7 +252,7 @@
 #define ST_OUTTEXTY			6 * UI_SCALE_Y
 
 // Width, in characters again.
-#define ST_OUTWIDTH			52  * UI_SCALE_X
+#define ST_OUTWIDTH			52
  // Height, in lines. 
 #define ST_OUTHEIGHT		1
 

@@ -41,7 +41,7 @@
 
 #include "doomstat.h"
 
-#define SPRITE_SCALE 4
+#include "scale.h"
 
 #define MINZ								(FRACUNIT*4)
 #define BASEYCENTER						100 / (320/BASE_WIDTH)

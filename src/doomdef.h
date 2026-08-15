@@ -27,6 +27,8 @@
 #include <string.h>
 #include "stubs.h"
 
+#include "scale.h"
+
 //
 // Global parameters/defines.
 //
@@ -35,7 +37,7 @@ enum { VERSION =  110 };
 
 // UI scaling factors relative to original 320x200
 #define UI_SCALE_X ((float)SCREENWIDTH / 320.0f)
-#define UI_SCALE_Y ((float)SCREENHEIGHT / 200.0f)
+#define UI_SCALE_Y ((float)SCREENHEIGHT / (200.0f))
 
 // Game mode handling - identify IWAD version
 //  to handle IWAD dependend animations etc.
@@ -117,12 +119,11 @@ typedef enum
 // 200
 #define SCREENHEIGHT (int)(SCREEN_MUL*BASE_WIDTH*INV_ASPECT_RATIO)
 
-#define TEXTURE_SCALE 8
-#define FLAT_SCALE 8
+
 
 // The maximum number of players, multiplayer/networking.
 #ifndef MAXPLAYERS
-#define MAXPLAYERS		4
+#define MAXPLAYERS		1
 #endif
 
 #define FLAT_SIZE 16          // new flat dimensions
