@@ -27,6 +27,8 @@
 #include <string.h>
 #include "stubs.h"
 
+#include "scale.h"
+
 //
 // Global parameters/defines.
 //
@@ -91,6 +93,11 @@ typedef enum
 // linuxdoom used SHM, which is default.
 //#define X11_DGA		1
 
+
+
+// UI scaling factors relative to original 320x200
+#define UI_SCALE_X ((float)SCREENWIDTH / 320.0f)
+#define UI_SCALE_Y ((float)SCREENHEIGHT / (200.0f))
 
 //
 // For resize of screen, at start of game.
